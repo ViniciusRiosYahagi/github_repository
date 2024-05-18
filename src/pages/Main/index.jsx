@@ -1,5 +1,13 @@
+import { Title } from "./styles"
+
+
 const Main = () => {
-    return <h1>Main</h1>
+    return (
+        <Title>
+            Tomato
+            <span>noo</span>
+        </Title>
+    )
 }
 
 export default Main

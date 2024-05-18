@@ -1,10 +1,11 @@
 import AppRoutes from "../AppRoutes"
-import './App.css'
+import GlobalStyle from "../src/styles/global"
 
 function App() {
   return (
     <>
-      <AppRoutes />
+      <GlobalStyle />
+        <AppRoutes />
     </>
   )
 }
