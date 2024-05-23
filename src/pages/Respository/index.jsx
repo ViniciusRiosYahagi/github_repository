@@ -1,5 +1,7 @@
-const Repository = () => {
-    return <h1>Repository</h1>
+const Repository = ({match}) => {
+    return (
+    <h1>${decodeURIComponent(match.params.repository)}</h1>
+    )
 }
 
 export default Repository
