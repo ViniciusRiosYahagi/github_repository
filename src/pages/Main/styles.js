@@ -1,4 +1,4 @@
-import styled , {keyframes, css} from "styled-components";
+import styled, { keyframes, css } from "styled-components";
 
 export const Container = styled.div`
   max-width: 700px;
@@ -41,31 +41,66 @@ const animate = keyframes`
   to {
     transform: rotate(360deg);
   }
-`
+`;
 
-export const SubmitButton = styled.button.attrs(props => ({
+export const SubmitButton = styled.button.attrs((props) => ({
   type: "submit",
   disabled: props.loading,
 }))`
-	background-color: #0d2636;
-	border: none;
-	border-radius: 4px;
-	margin-left: 10px;
-	padding: 0 15px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  background-color: #0d2636;
+  border: none;
+  border-radius: 4px;
+  margin-left: 10px;
+  padding: 0 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &[disabled] {
     cursor: not-allowed;
     opacity: 0.5;
   }
 
-  ${props => props.loading &&
+  ${(props) =>
+    props.loading &&
     css`
-      svg{
+      svg {
         animation: ${animate} 2s linear infinite;
       }
-    `
+    `}
+`;
+
+export const List = styled.ul`
+  list-style: none;
+  margin-top: 20px;
+
+  li {
+    padding: 15px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    & + li {
+      border-top: 1px solid #eee;
+    }
   }
+
+  a {
+    color: #0d2636;
+    text-decoration: none;
+  }
+`;
+
+export const DeleteButton = styled.button.attrs({
+  type: "button",
+})`
+  margin-left: 6px;
+  background: transparent;
+  color: #0d2636;
+  border: none;
+  padding: 8px 7px;
+  outline: none;
+  border-radius: 4px;
+  cursor: pointer;
 `;
